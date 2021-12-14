@@ -1,16 +1,19 @@
-// 1. Given a string, make a function that reverses the char order
-let textReverse = "";
-let firstExample = document.getElementById("firstExample").innerHTML;
-let firstButton = document.getElementById("firstButton");
 
+// 1. Given a string, make a function that reverses the char order
 function reverseStr(str) {
+    let textReverse = "";
+
     for (letter of str) {
         textReverse = letter + textReverse;
     }
     return textReverse;
 }
 
-// TEST
+// ============================ TEST =============================
+let firstButton = document.getElementById("firstButton");
+let firstExample = document.getElementById("firstExample").innerHTML;
+
+
 firstButton.addEventListener('click', function reversingExample() {
     document.getElementById('firstExample').innerHTML = reverseStr(firstExample);        
 })
@@ -18,6 +21,19 @@ firstButton.addEventListener('click', function reversingExample() {
 
 
 // 2. Given a string, make a function that reverses the char order, using destructuring
+
+
+function destructuringReverse(str) {
+    let arrayOfStr = [...str]
+    return arrayOfStr.reverse();
+    }
+// ============================ TEST =============================
+let secondExample = document.getElementById("secondExample").innerHTML;
+let secondButton = document.getElementById("secondButton");
+
+secondButton.addEventListener('click', function destructuringReverse() {
+    document.getElementById('secondExample').innerHTML = reverseStr(secondExample);
+})
 
 
 
