@@ -59,6 +59,29 @@ recursiveButton.addEventListener('click', function recursive() {
 
 // 5. Build a function isPalindrome which, given a string, tell us if is palindrome or not.
 
+function isPalindrome(text) {
+    let clearedText = clearText(text);
+    return clearedText === reverseStr(clearedText)
+}
+
+function clearText(text) {
+    return text.toLowerCase().split(' ').join('').split(',').join('')
+}
+
+
+// =========================== TEST ======================
+
+let palindromeExample = document.getElementById("palindromeExample");
+let palindromeButton = document.getElementById("palindromeButton");
+let palindromeResult = document.getElementById("palindromeResult");
+
+palindromeButton.addEventListener('click', () => {
+    if (isPalindrome(palindromeExample.innerHTML) ) {
+        palindromeResult.innerHTML = "True"
+    }
+}
+)
+
 
 
 
